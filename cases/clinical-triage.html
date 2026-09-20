@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimodal Clinical Triage — Signal Forge Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="site-nav"></div>
+    <main class="wrap">
+      <header class="case-hero">
+        <p class="eyebrow">Case 02 · National health network</p>
+        <h1>Multimodal clinical triage</h1>
+        <p class="summary">
+          A specialist-grade triage stack that reads imaging, vitals, notes, and
+          labs in one pass — cutting decision latency from twelve minutes to
+          forty-seven seconds with 99.2% concordance to specialist panels in
+          shadow mode.
+        </p>
+        <div class="case-kpis">
+          <article><strong>12m→47s</strong><span>Decision latency</span></article>
+          <article><strong>99.2%</strong><span>Specialist concordance</span></article>
+          <article><strong>0</strong><span>Sev-1 in first 180 days</span></article>
+          <article><strong>FDA-path</strong><span>Designed from day one</span></article>
+        </div>
+      </header>
+
+      <div class="case-layout">
+        <article class="case-body prose">
+          <h2 id="context">Context</h2>
+          <p>
+            Emergency and urgent pathways inside a national health network were
+            bottlenecked by specialist availability. Junior clinicians made
+            high-stakes routing decisions under time pressure, while imaging and
+            labs arrived asynchronously into systems that did not speak to each
+            other. Prior AI pilots scored radiology in isolation and ignored the
+            note that said “patient declining.”
+          </p>
+
+          <h2 id="problem">The problem, precisely</h2>
+          <p>
+            Accuracy without calibration is dangerous. A model that is “usually
+            right” but confidently wrong on edge cases is worse than a slower
+            human. The network needed multimodal reasoning <em>and</em> the
+            ability to abstain — to escalate rather than invent certainty —
+            with audit trails suitable for clinical governance and eventual
+            regulatory review.
+          </p>
+          <div class="callout">
+            Design rule: clinicians must trust the system’s silence more than
+            its confidence. Abstention is a feature, not a failure.
+          </div>
+
+          <h2 id="approach">What we built</h2>
+          <p>
+            A vision-language backbone fused imaging embeddings with structured
+            vitals, lab time series, and clinical notes. Conformal prediction
+            layers produced set-valued outputs with finite-sample coverage
+            guarantees. Human override telemetry captured every disagreement for
+            continuous evaluation.
+          </p>
+          <h3>Architecture highlights</h3>
+          <ul>
+            <li>Multimodal encoder with modality dropout for missing inputs.</li>
+            <li>Conformal prediction for calibrated abstention bands.</li>
+            <li>Full provenance: which inputs drove which recommendation.</li>
+            <li>Shadow deployment against specialist panel labels.</li>
+            <li>Policy-as-code gates for contraindicated pathways.</li>
+          </ul>
+
+          <h2 id="hard">The hard parts</h2>
+          <p>
+            Label quality varied wildly by site. We built a specialist review
+            flywheel and refused to train on contested cases without adjudication.
+            Distribution shift between urban trauma centers and rural clinics
+            required site-aware calibration, not a single global threshold.
+          </p>
+          <p>
+            Change management mattered as much as ROC curves. We embedded
+            clinical champions, measured override reasons, and published weekly
+            “miss postmortems” that treated false confidence as a Sev-adjacent
+            event even when no patient harm occurred.
+          </p>
+
+          <h2 id="rollout">Rollout</h2>
+          <p>
+            Shadow mode across three sites for eight weeks, then assisted mode
+            where the system proposed and clinicians confirmed. Full assisted
+            triage expanded only after concordance and override metrics cleared
+            governance thresholds. Marketing and patient communications teams
+            were looped in late — not to hype AI, but to set honest expectations
+            about assisted care pathways.
+          </p>
+
+          <h2 id="outcomes">Outcomes</h2>
+          <p>
+            Median decision latency moved from roughly twelve minutes to
+            forty-seven seconds on the measured pathway. Concordance with
+            specialist panels hit 99.2% in shadow evaluation. Zero Sev-1
+            incidents attributed to the system in the first 180 days of assisted
+            operation.
+          </p>
+
+          <h2 id="lessons">What we’d repeat</h2>
+          <p>
+            Start with regulatory posture, not with a demo. Calibrate before you
+            celebrate accuracy. And instrument disagreement as carefully as you
+            instrument agreement — that is where safety lives.
+          </p>
+        </article>
+        <aside class="case-toc">
+          <p class="mono">On this page</p>
+          <a href="#context">Context</a>
+          <a href="#problem">Problem</a>
+          <a href="#approach">What we built</a>
+          <a href="#hard">Hard parts</a>
+          <a href="#rollout">Rollout</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#lessons">Lessons</a>
+        </aside>
+      </div>
+      <nav class="case-nav">
+        <a href="/cases/neural-logistics.html">← Neural logistics</a>
+        <a href="/cases/fraud-graph.html">Next: Fraud graph →</a>
+      </nav>
+    </main>
+    <script type="module" src="/src/case.js"></script>
+  </body>
+</html>

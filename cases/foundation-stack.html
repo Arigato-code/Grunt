@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation Fine-tune Stack — Signal Forge Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="site-nav"></div>
+    <main class="wrap">
+      <header class="case-hero">
+        <p class="eyebrow">Case 04 · Sovereign AI lab</p>
+        <h1>Foundation fine-tune stack</h1>
+        <p class="summary">
+          An end-to-end post-training platform for a national-scale model —
+          preference flywheels, eval CI, and cost-aware routing that delivered
+          43% domain lift and 6× cheaper inference versus the base fleet.
+        </p>
+        <div class="case-kpis">
+          <article><strong>43%</strong><span>Domain eval lift vs base</span></article>
+          <article><strong>6×</strong><span>Cheaper inference</span></article>
+          <article><strong>9 mo</strong><span>Lab → production fleet</span></article>
+          <article><strong>CI</strong><span>Continuous eval gates</span></article>
+        </div>
+      </header>
+      <div class="case-layout">
+        <article class="case-body prose">
+          <h2 id="context">Context</h2>
+          <p>
+            A sovereign AI lab needed to move from research checkpoints to a
+            governed production fleet serving public-sector and strategic
+            industry workloads. They had strong researchers and weak release
+            engineering. Fine-tunes lived on laptops. Eval was a spreadsheet.
+            Cost was someone else’s problem until the invoice arrived.
+          </p>
+          <h2 id="problem">The problem, precisely</h2>
+          <p>
+            Domain lift without catastrophic forgetting. Preference data that
+            did not encode political or safety debt. Inference routing that could
+            choose the right expert without a PhD on-call. And a marketing /
+            communications layer that could explain capability honestly to
+            ministries without overclaiming.
+          </p>
+          <div class="callout">
+            Sovereign does not mean isolated from engineering discipline. It
+            means the control plane, weights, and audit logs stay where policy
+            requires — while the craftsmanship stays world-class.
+          </div>
+          <h2 id="approach">What we built</h2>
+          <p>
+            A post-training platform spanning data contracts, RLHF/DPO pipelines,
+            mixture-of-experts routing, and continuous evaluation gates in CI.
+            Every candidate model failed closed if safety, domain, or regression
+            suites moved the wrong way. Distillation and speculative decoding
+            cut serving cost without silently eroding quality.
+          </p>
+          <h3>Architecture highlights</h3>
+          <ul>
+            <li>Preference data flywheel with reviewer QA and toxicity screens.</li>
+            <li>MoE routing with cost/latency multi-objective selection.</li>
+            <li>Eval suites as merge gates — not dashboards after the fact.</li>
+            <li>Model cards + evidence packs for governance reviewers.</li>
+            <li>Comms toolkit for accurate external capability claims.</li>
+          </ul>
+          <h2 id="hard">The hard parts</h2>
+          <p>
+            Catastrophic forgetting showed up late: domain suites rose while
+            general reasoning quietly fell. We added “canary general” evals to
+            every domain train job and blocked merges that traded away core
+            capability beyond agreed budgets.
+          </p>
+          <p>
+            Preference data politics were real. We separated style, safety, and
+            task preferences into distinct datasets with different owners —
+            preventing a single committee from encoding contested norms into
+            every token.
+          </p>
+          <h2 id="rollout">Rollout</h2>
+          <p>
+            Nine months from platform charter to production fleet. Internal
+            dogfood, restricted pilots, then broader ministry workloads. External
+            messaging was version-locked to eval snapshots so marketing could
+            not outrun measured capability.
+          </p>
+          <h2 id="outcomes">Outcomes</h2>
+          <p>
+            43% lift on domain evaluation suites versus the prior base. Roughly
+            6× lower inference cost via routing and distillation. A release
+            cadence measured in weeks, not quarters — with security sign-off
+            embedded rather than appended.
+          </p>
+          <h2 id="lessons">What we’d repeat</h2>
+          <p>
+            Make eval the product. Tie communications to eval snapshots. And
+            treat cost as a model quality dimension, not an ops afterthought.
+          </p>
+        </article>
+        <aside class="case-toc">
+          <p class="mono">On this page</p>
+          <a href="#context">Context</a>
+          <a href="#problem">Problem</a>
+          <a href="#approach">What we built</a>
+          <a href="#hard">Hard parts</a>
+          <a href="#rollout">Rollout</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#lessons">Lessons</a>
+        </aside>
+      </div>
+      <nav class="case-nav">
+        <a href="/cases/fraud-graph.html">← Fraud graph</a>
+        <a href="/cases/code-migration.html">Next: Code migration →</a>
+      </nav>
+    </main>
+    <script type="module" src="/src/case.js"></script>
+  </body>
+</html>

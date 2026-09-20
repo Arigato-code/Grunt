@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edge Perception Mesh — Signal Forge Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="site-nav"></div>
+    <main class="wrap">
+      <header class="case-hero">
+        <p class="eyebrow">Case 06 · Industrial autonomy OEM</p>
+        <h1>Edge perception mesh</h1>
+        <p class="summary">
+          On-robot multimodal perception and planning for hazardous environments —
+          62% faster missions, fully offline when the uplink dies, three years
+          fielded without a safety recall.
+        </p>
+        <div class="case-kpis">
+          <article><strong>62%</strong><span>Mission time reduction</span></article>
+          <article><strong>100%</strong><span>Offline operable</span></article>
+          <article><strong>3 yrs</strong><span>Fielded without recall</span></article>
+          <article><strong>MPC</strong><span>+ formal geofence monitors</span></article>
+        </div>
+      </header>
+      <div class="case-layout">
+        <article class="case-body prose">
+          <h2 id="context">Context</h2>
+          <p>
+            An industrial OEM builds robots that enter places humans should not:
+            chemical plants, collapsed structures, high-heat inspection corridors.
+            Connectivity is intermittent by definition. A cloud-dependent stack
+            is a non-starter. Prior perception stacks froze or hallucinated clear
+            paths when sensors disagreed — both failure modes are unacceptable.
+          </p>
+          <h2 id="problem">The problem, precisely</h2>
+          <p>
+            Fuse LiDAR, thermal, and RF into a coherent world model on constrained
+            compute. Plan under uncertainty with safety envelopes that degrade
+            gracefully. Prove — to insurers and customers — that autonomy will
+            refuse unsafe action rather than invent confidence.
+          </p>
+          <div class="callout">
+            Graceful degradation beats heroic autonomy. When sensors conflict,
+            slow down or stop. Never “average” your way through a hazard.
+          </div>
+          <h2 id="approach">What we built</h2>
+          <p>
+            Quantized vision transformers for onboard perception, a model-
+            predictive controller for motion, and formalized geofence monitors
+            that could halt actuators independent of the planner. The mesh
+            synchronized multi-robot observations when links existed, and
+            continued solo when they did not.
+          </p>
+          <h3>Architecture highlights</h3>
+          <ul>
+            <li>On-device multimodal fusion with conflict detection.</li>
+            <li>MPC planner with explicit uncertainty budgets.</li>
+            <li>Independent safety monitor with formal geofence checks.</li>
+            <li>Offline-first operation; cloud as optimization, not dependency.</li>
+            <li>Field telemetry for post-mission learning without live uplink.</li>
+          </ul>
+          <h2 id="hard">The hard parts</h2>
+          <p>
+            Thermal and LiDAR disagreement in smoke and dust created pathological
+            cases. We trained conflict classifiers and forced the planner into
+            restricted modes rather than blending incompatible geometries.
+          </p>
+          <p>
+            Certification narratives required evidence packs, not demos. We
+            instrumented every halt reason and shipped insurer-readable reports
+            as a product feature — which later became a sales asset for the OEM’s
+            own marketing team.
+          </p>
+          <h2 id="rollout">Rollout</h2>
+          <p>
+            Hardware-in-the-loop, controlled yards, then customer sites with
+            escalating autonomy permissions. Three years in field without a
+            safety recall related to the perception/planning stack.
+          </p>
+          <h2 id="outcomes">Outcomes</h2>
+          <p>
+            Mission time down 62% on the benchmark routes. Full offline
+            operability as a contractual guarantee. The safety evidence pack
+            shortened enterprise sales cycles — proof that deep engineering can
+            be a go-to-market advantage, not only a cost center.
+          </p>
+          <h2 id="lessons">What we’d repeat</h2>
+          <p>
+            Design the refuse path first. Make evidence a deliverable. And let
+            marketing sell what safety engineering already proved — never the
+            reverse.
+          </p>
+        </article>
+        <aside class="case-toc">
+          <p class="mono">On this page</p>
+          <a href="#context">Context</a>
+          <a href="#problem">Problem</a>
+          <a href="#approach">What we built</a>
+          <a href="#hard">Hard parts</a>
+          <a href="#rollout">Rollout</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#lessons">Lessons</a>
+        </aside>
+      </div>
+      <nav class="case-nav">
+        <a href="/cases/code-migration.html">← Code migration</a>
+        <a href="/#dock">Talk to us →</a>
+      </nav>
+    </main>
+    <script type="module" src="/src/case.js"></script>
+  </body>
+</html>

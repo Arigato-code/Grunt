@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autonomous Code Migration — Signal Forge Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="site-nav"></div>
+    <main class="wrap">
+      <header class="case-hero">
+        <p class="eyebrow">Case 05 · Legacy enterprise estate</p>
+        <h1>Autonomous code migration</h1>
+        <p class="summary">
+          An agent swarm that planned, rewrote, and verified a COBOL → cloud
+          migration across 4.2M lines — zero Sev-1 regressions in the first
+          ninety days live.
+        </p>
+        <div class="case-kpis">
+          <article><strong>4.2M</strong><span>LOC migrated</span></article>
+          <article><strong>11 wks</strong><span>Calendar time</span></article>
+          <article><strong>0</strong><span>Sev-1 in 90 days</span></article>
+          <article><strong>Sev-0</strong><span>Drift policy until proven</span></article>
+        </div>
+      </header>
+      <div class="case-layout">
+        <article class="case-body prose">
+          <h2 id="context">Context</h2>
+          <p>
+            A decades-old enterprise core still ran critical batch and online
+            flows on COBOL with JCL glue and tribal knowledge living in people
+            who were retiring. Prior migration attempts stalled in analysis
+            paralysis. Leadership wanted cloud economics and hiring optionality
+            without betting the company on a big-bang rewrite.
+          </p>
+          <h2 id="problem">The problem, precisely</h2>
+          <p>
+            Semantic equivalence across undocumented business rules. Tests that
+            did not exist. Batch windows that could not slip. And a political
+            environment where “AI wrote the code” would be used as a weapon in
+            the first outage unless verification was stronger than the narrative.
+          </p>
+          <div class="callout">
+            We treated behavioral drift as Sev-0 until differential testing
+            proved otherwise. Speed without proof is just a faster way to fail.
+          </div>
+          <h2 id="approach">What we built</h2>
+          <p>
+            A multi-agent planner decomposed the estate into migration slices.
+            Hybrid symbolic + LLM transformers proposed rewrites. Differential
+            testing compared old and new on production-shadow inputs. Progressive
+            traffic shifting moved risk in measured increments.
+          </p>
+          <h3>Architecture highlights</h3>
+          <ul>
+            <li>Dependency graph mining from code, jobs, and runtime traces.</li>
+            <li>Agent roles: planner, rewriter, verifier, SRE proposer.</li>
+            <li>Differential harness with property-based business assertions.</li>
+            <li>Progressive delivery with automatic rollback triggers.</li>
+            <li>Knowledge capture so tribal rules became executable tests.</li>
+          </ul>
+          <h2 id="hard">The hard parts</h2>
+          <p>
+            The undocumented rules were the product. Agents that “cleaned up”
+            code often deleted revenue logic that looked like dead code. We
+            inverted the default: preserve behavior first, refactor only behind
+            equivalence proofs.
+          </p>
+          <p>
+            Human experts were scarce and skeptical. We paid them in leverage —
+            every hour of adjudication permanently became a test — and published
+            agent miss rates so trust was earned in public.
+          </p>
+          <h2 id="rollout">Rollout</h2>
+          <p>
+            Eleven calendar weeks for the contracted scope. Not because agents
+            are magic — because the verification machine let humans spend time
+            only where judgment was required. Internal comms framed the program
+            as “augmented migration,” never “autonomous replacement of staff.”
+          </p>
+          <h2 id="outcomes">Outcomes</h2>
+          <p>
+            4.2M lines migrated. Zero Sev-1 incidents in the first ninety days.
+            Batch windows held. Hiring for the new stack became possible without
+            a COBOL hiring crisis. The verification harness outlived the project
+            as a permanent regression gate.
+          </p>
+          <h2 id="lessons">What we’d repeat</h2>
+          <p>
+            Proof before poetry. Turn experts into test authors. And never let
+            marketing claim “fully autonomous” when the value is disciplined
+            human-in-the-loop acceleration.
+          </p>
+        </article>
+        <aside class="case-toc">
+          <p class="mono">On this page</p>
+          <a href="#context">Context</a>
+          <a href="#problem">Problem</a>
+          <a href="#approach">What we built</a>
+          <a href="#hard">Hard parts</a>
+          <a href="#rollout">Rollout</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#lessons">Lessons</a>
+        </aside>
+      </div>
+      <nav class="case-nav">
+        <a href="/cases/foundation-stack.html">← Foundation stack</a>
+        <a href="/cases/edge-perception.html">Next: Edge perception →</a>
+      </nav>
+    </main>
+    <script type="module" src="/src/case.js"></script>
+  </body>
+</html>

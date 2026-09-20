@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neural Logistics OS — Signal Forge Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="site-nav"></div>
+    <main class="wrap">
+      <header class="case-hero">
+        <p class="eyebrow">Case 01 · Fortune-50 logistics</p>
+        <h1>Neural logistics OS</h1>
+        <p class="summary">
+          A multimodal demand graph that replaced a decade of brittle forecast
+          heuristics across 14 regions — cutting forecast error 38% and freeing
+          an estimated $240M in annualized dead inventory.
+        </p>
+        <div class="case-kpis">
+          <article><strong>38%</strong><span>Forecast error reduction</span></article>
+          <article><strong>$240M</strong><span>Dead inventory saved / yr</span></article>
+          <article><strong>2.1B</strong><span>SKU-day combinations</span></article>
+          <article><strong>11 wks</strong><span>Shadow → production</span></article>
+        </div>
+      </header>
+
+      <div class="case-layout">
+        <article class="case-body prose">
+          <h2 id="context">Context</h2>
+          <p>
+            The client operated one of the densest physical networks on the
+            planet: regional DCs, cross-docks, and last-mile nodes synchronized
+            against a catalog that changed hourly. Planning lived in a patchwork
+            of statistical models, tribal Excel, and vendor black boxes that
+            disagreed with each other more often than they agreed with reality.
+          </p>
+          <p>
+            Leadership had already funded three “AI transformations.” Each
+            produced a slideware win and a production miss. What they needed was
+            not another model — it was a <em>decision system</em> that could
+            absorb weather, port congestion, labor availability, promotions, and
+            long-tail SKU cold starts without poisoning the head of the catalog.
+          </p>
+
+          <h2 id="problem">The problem, precisely</h2>
+          <p>
+            Forecast error was not evenly distributed. The top 8% of SKUs were
+            “good enough.” The long tail — seasonal, regional, and sparse —
+            generated most of the dead inventory and most of the stockouts that
+            damaged NPS. Existing hierarchical Bayes approaches collapsed under
+            feature lag; deep nets overfit promotions; graph approaches from
+            vendors could not meet the &lt;90ms online join budget required for
+            replenishment APIs.
+          </p>
+          <div class="callout">
+            Hard constraint: any system that could not explain a miss to a
+            regional GM in plain language would be rejected — regardless of
+            offline MAPE.
+          </div>
+
+          <h2 id="approach">What we built</h2>
+          <p>
+            Signal Forge designed a neural logistics OS centered on a temporal
+            graph of products, locations, carriers, and exogenous signals. Nodes
+            carried learned embeddings; edges carried time-aware capacity and
+            substitution structure. Hierarchical Bayesian priors regularized the
+            long tail so sparse SKUs borrowed strength without washing out local
+            truth.
+          </p>
+          <h3>Architecture highlights</h3>
+          <ul>
+            <li>Streaming feature store with online joins under 90ms p95.</li>
+            <li>Temporal graph net + hierarchical priors for cold-start SKUs.</li>
+            <li>Shadow mode with dual-write into existing planning tools.</li>
+            <li>Human override console with full audit of every recommendation.</li>
+            <li>Weekly causal evals against holdout DCs before each cutover.</li>
+          </ul>
+
+          <h2 id="hard">The hard parts</h2>
+          <p>
+            Cold-start was the killer. Naïve transfer from popular SKUs created
+            phantom demand in categories that looked similar in embedding space
+            but not in buyer behavior. We introduced category-aware shrinkage and
+            a refusal policy: when uncertainty exceeded a calibrated threshold,
+            the system recommended safety stock bands instead of point forecasts.
+          </p>
+          <p>
+            The second killer was organizational. Planners had been burned. We
+            instrumented “trust telemetry” — every override was labeled, and
+            override rates became a first-class KPI alongside MAPE. Trust rose
+            only when the system admitted uncertainty.
+          </p>
+
+          <h2 id="rollout">Rollout</h2>
+          <p>
+            Eleven weeks from signed charter to production for the first two
+            regions. Shadow for three weeks, canary for two, then progressive
+            traffic. Marketing and commercial teams were brought in early: promo
+            calendars became first-class graph inputs so demand spikes were
+            anticipated rather than explained after the fact.
+          </p>
+
+          <h2 id="outcomes">Outcomes</h2>
+          <p>
+            Forecast error down 38% on the measured portfolio. Dead inventory
+            reduced by an estimated $240M annualized. Stockout rate on promoted
+            SKUs fell enough that commercial teams stopped running parallel
+            “gut” orders. Finance adopted the OS outputs as the planning system
+            of record within two quarters.
+          </p>
+
+          <h2 id="lessons">What we’d repeat</h2>
+          <p>
+            Ship the trust layer with the model. Treat marketing and supply as
+            one graph. Prefer calibrated abstention over confident wrongness.
+            And never call it done when offline metrics look good — only when
+            regional operators stop fighting the tool.
+          </p>
+        </article>
+
+        <aside class="case-toc">
+          <p class="mono">On this page</p>
+          <a href="#context">Context</a>
+          <a href="#problem">Problem</a>
+          <a href="#approach">What we built</a>
+          <a href="#hard">Hard parts</a>
+          <a href="#rollout">Rollout</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#lessons">Lessons</a>
+        </aside>
+      </div>
+
+      <nav class="case-nav">
+        <a href="/#work">← All work</a>
+        <a href="/cases/clinical-triage.html">Next: Clinical triage →</a>
+      </nav>
+    </main>
+    <script type="module" src="/src/case.js"></script>
+  </body>
+</html>

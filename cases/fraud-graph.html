@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-time Fraud Graph — Signal Forge Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="site-nav"></div>
+    <main class="wrap">
+      <header class="case-hero">
+        <p class="eyebrow">Case 03 · Global payments rail</p>
+        <h1>Real-time fraud graph</h1>
+        <p class="summary">
+          A continuously learning entity graph that scores every hop in the money
+          path — blocking an estimated $1.1B in attack surface year-over-year
+          while holding false positives under 0.08% at 18ms p99.
+        </p>
+        <div class="case-kpis">
+          <article><strong>$1.1B</strong><span>Attack surface blocked YoY</span></article>
+          <article><strong>0.08%</strong><span>False positive rate</span></article>
+          <article><strong>18ms</strong><span>p99 score latency</span></article>
+          <article><strong>Holiday</strong><span>Peak load survived</span></article>
+        </div>
+      </header>
+      <div class="case-layout">
+        <article class="case-body prose">
+          <h2 id="context">Context</h2>
+          <p>
+            A global payments rail faced adaptive fraud rings that mutated faster
+            than rule packs could be written. Device farms, synthetic identity,
+            mule networks, and friendly fraud blended into traffic that looked
+            legitimate on any single feature. Marketing promotions — flash sales,
+            referral bursts — created legitimate spikes that old rules treated as
+            attacks, burning conversion and brand trust.
+          </p>
+          <h2 id="problem">The problem, precisely</h2>
+          <p>
+            Pointwise classifiers missed coordinated rings. Pure graph approaches
+            were too slow for authorization paths. The business needed entity-level
+            reasoning inside a hard latency envelope, with kill switches that risk
+            and compliance could operate without waiting on a model release.
+          </p>
+          <div class="callout">
+            False positives are not a metrics footnote — they are a revenue and
+            marketing wound. We optimized the Pareto front, not a single AUC.
+          </div>
+          <h2 id="approach">What we built</h2>
+          <p>
+            A streaming graph neural system over devices, merchants, accounts, and
+            intermediaries. Adversarial example harnesses continuously probed the
+            scorer. Policy-as-code encoded jurisdictional and partner constraints.
+            Marketing calendars fed the feature plane so promo-shaped traffic was
+            expected, not punished.
+          </p>
+          <h3>Architecture highlights</h3>
+          <ul>
+            <li>Streaming GNN with incremental neighborhood aggregation.</li>
+            <li>Adversarial red-team harness in CI for every model candidate.</li>
+            <li>Policy-as-code kill switches operable by risk on-call.</li>
+            <li>Promo / campaign features shared with growth analytics.</li>
+            <li>Latency budget enforced with graceful feature degradation.</li>
+          </ul>
+          <h2 id="hard">The hard parts</h2>
+          <p>
+            Graph staleness under burst write loads threatened both latency and
+            recall. We partitioned hot entities, prioritized edges by risk prior,
+            and degraded to a fast linear scorer when neighborhoods could not be
+            materialized in time — with explicit telemetry when that happened.
+          </p>
+          <p>
+            Organizationally, fraud and growth had been adversaries. We created a
+            joint review where every major campaign had a fraud simulation before
+            launch. That single process saved more false positives than any model
+            tweak that quarter.
+          </p>
+          <h2 id="rollout">Rollout</h2>
+          <p>
+            Shadow scores for six weeks, then advisory, then enforce on high-risk
+            corridors, then global. Holiday peak was the exam. The system held
+            p99 under 18ms with degraded-mode rates inside agreed SLOs.
+          </p>
+          <h2 id="outcomes">Outcomes</h2>
+          <p>
+            Estimated $1.1B attack surface blocked year-over-year. False positive
+            rate held under 0.08% on the measured portfolio. Growth teams reported
+            fewer “why was my campaign killed” escalations after promo features
+            landed.
+          </p>
+          <h2 id="lessons">What we’d repeat</h2>
+          <p>
+            Put marketing and fraud on the same feature bus. Budget latency like
+            you budget loss. And assume the attacker reads your release notes.
+          </p>
+        </article>
+        <aside class="case-toc">
+          <p class="mono">On this page</p>
+          <a href="#context">Context</a>
+          <a href="#problem">Problem</a>
+          <a href="#approach">What we built</a>
+          <a href="#hard">Hard parts</a>
+          <a href="#rollout">Rollout</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#lessons">Lessons</a>
+        </aside>
+      </div>
+      <nav class="case-nav">
+        <a href="/cases/clinical-triage.html">← Clinical triage</a>
+        <a href="/cases/foundation-stack.html">Next: Foundation stack →</a>
+      </nav>
+    </main>
+    <script type="module" src="/src/case.js"></script>
+  </body>
+</html>

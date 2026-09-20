@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Signal Forge — enterprise AI, ML, systems, and marketing engines that ship outcomes, not slideware."
+    />
+    <title>Signal Forge — Enterprise AI, Systems &amp; Marketing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <canvas id="webgl" aria-hidden="true"></canvas>
+    <div id="site-nav"></div>
+
+    <main>
+      <section class="hero wrap" id="orbit">
+        <div class="hero__grid">
+          <div>
+            <p class="eyebrow">Enterprise software · AI · ML · Marketing</p>
+            <h1 class="brand-mark">
+              <span>SIGNAL</span>
+              <span class="forge">FORGE</span>
+            </h1>
+            <p class="lede">
+              We finish what research papers start. Production systems for
+              artificial intelligence, machine learning, mission-critical
+              infrastructure — and marketing engines that turn models into
+              measurable demand.
+            </p>
+            <div class="cta-row">
+              <a href="#work" class="btn btn--primary">Explore the work</a>
+              <a href="#dock" class="btn btn--ghost">Talk to us</a>
+            </div>
+          </div>
+          <aside class="hero__aside" data-reveal>
+            <h2>Outcomes the board can read</h2>
+            <ul class="stat-list">
+              <li>
+                <strong>$1.1B+</strong>
+                <span>fraud blocked YoY</span>
+              </li>
+              <li>
+                <strong>$240M</strong>
+                <span>inventory saved / yr</span>
+              </li>
+              <li>
+                <strong>4.2M</strong>
+                <span>LOC migrated, 0 Sev-1</span>
+              </li>
+              <li>
+                <strong>3.1×</strong>
+                <span>pipeline from marketing OS</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="trust">
+        <div class="wrap">
+          <p class="trust__label mono">Trusted across regulated &amp; high-scale environments</p>
+          <div class="trust__row">
+            <span>FORTUNE-50 LOGISTICS</span>
+            <span>NATIONAL HEALTH</span>
+            <span>GLOBAL PAYMENTS</span>
+            <span>SOVEREIGN AI LAB</span>
+            <span>INDUSTRIAL OEM</span>
+            <span>ENTERPRISE GROWTH ORGS</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="zone" id="solutions">
+        <div class="wrap">
+          <header class="zone-head">
+            <p class="eyebrow">Solutions map</p>
+            <h2>Pick your entry point. We meet you in production.</h2>
+            <p class="zone-sub">
+              Browse the same way your org actually buys — by industry, function,
+              team, or role. Marketing sits beside engineering on purpose.
+            </p>
+          </header>
+          <div class="card-grid" data-reveal>
+            <article class="card">
+              <span class="card__code mono">BY INDUSTRY</span>
+              <h3>Regulated &amp; physical worlds</h3>
+              <p>
+                Banking, insurance, healthcare, logistics, government, and
+                manufacturing — where wrong answers have real cost.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card__code mono">BY FUNCTION</span>
+              <h3>From risk to revenue</h3>
+              <p>
+                Fraud, engineering, legal — and marketing growth systems that
+                treat creative, channels, and attribution as one stack.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card__code mono">BY ROLE</span>
+              <h3>Built for decision makers</h3>
+              <p>
+                CIO control planes, CTO architectures, CMO demand engines, CEO
+                transformation programs with named P&amp;L owners.
+              </p>
+            </article>
+          </div>
+          <p class="zone-sub" style="margin-top: 1.5rem">
+            Open <strong>Solutions</strong> in the nav for the full mega-menu —
+            industry, function, team, and role taxonomies with concrete use cases.
+          </p>
+        </div>
+      </section>
+
+      <section class="zone" id="capabilities">
+        <div class="wrap">
+          <header class="zone-head">
+            <p class="eyebrow">Capabilities</p>
+            <h2>A constellation of weapons we already know how to fire.</h2>
+            <p class="zone-sub">
+              Not a menu of buzzwords. Deep practice areas with scars from live
+              traffic, auditors, and quarterly reviews.
+            </p>
+          </header>
+          <div class="card-grid">
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-AI</span>
+              <h3>Foundation systems</h3>
+              <p>
+                Pretrain, fine-tune, distill, and route model fleets. Cost and
+                quality as first-class constraints — not afterthoughts.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-ML</span>
+              <h3>Decision engines</h3>
+              <p>
+                Graphs, causal inference, and online learners that survive
+                distribution shift without weekend fire drills.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-SYS</span>
+              <h3>Mission-critical infra</h3>
+              <p>
+                Inference meshes, GPU schedulers, and data planes that hold when
+                the board is watching the dashboard.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-MKT</span>
+              <h3>Marketing OS</h3>
+              <p>
+                Content engines, campaign orchestration, creative QA, SEO/GEO,
+                and multi-touch attribution tied to pipeline — not vanity metrics.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-EDGE</span>
+              <h3>Edge &amp; autonomy</h3>
+              <p>
+                On-device models and closed-loop control where cloud latency is a
+                liability, not a feature.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-SEC</span>
+              <h3>Adversarial defense</h3>
+              <p>
+                Fraud graphs, abuse detection, and red-team harnesses that assume
+                the attacker is smarter than the slide deck.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-MIG</span>
+              <h3>Autonomous migration</h3>
+              <p>
+                Agent fleets that rewrite legacy estates at industrial scale —
+                verified, instrumented, boring in production.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-DATA</span>
+              <h3>Decision science</h3>
+              <p>
+                Feature stores, experiment platforms, and lift measurement that
+                finance will actually accept.
+              </p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card__code mono">SF-GOV</span>
+              <h3>Governance &amp; RAI</h3>
+              <p>
+                Audit trails, policy-as-code, eval gates, and kill switches —
+                compliance designed in, not bolted on.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="zone" id="marketing">
+        <div class="wrap">
+          <div class="marketing-panel" data-reveal>
+            <div>
+              <p class="eyebrow">New pillar · Marketing</p>
+              <h2>Marketing is an engineering problem. We treat it like one.</h2>
+              <p class="lead">
+                Most “AI for marketing” is a chatbot on a blog. We build the
+                operating system: generation, governance, channel execution, and
+                closed-loop attribution into CRM and revenue.
+              </p>
+              <ul>
+                <li>
+                  <strong>Content &amp; creative engines</strong> — brand-safe
+                  generation with human review gates and style systems.
+                </li>
+                <li>
+                  <strong>Campaign orchestration</strong> — always-on testing
+                  across paid, lifecycle, and product-led motions.
+                </li>
+                <li>
+                  <strong>SEO / GEO / answer engines</strong> — structured
+                  presence where buyers (and models) actually look.
+                </li>
+                <li>
+                  <strong>Attribution that survives finance</strong> — causal
+                  lift, not last-click fairy tales.
+                </li>
+              </ul>
+            </div>
+            <div class="mkt-metrics">
+              <article>
+                <strong>3.1×</strong>
+                <span>qualified pipeline in two quarters for a B2B platform</span>
+              </article>
+              <article>
+                <strong>−41%</strong>
+                <span>cost per opportunity after creative + bidding redesign</span>
+              </article>
+              <article>
+                <strong>18 days</strong>
+                <span>to stand up governed content ops across 12 locales</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="zone" id="work">
+        <div class="wrap">
+          <header class="zone-head">
+            <p class="eyebrow">Selected work</p>
+            <h2>Proof monoliths — each with a full autopsy.</h2>
+            <p class="zone-sub">
+              Short teases here. Long-form case writing on dedicated pages: the
+              problem, the hard parts, the architecture, and the numbers.
+            </p>
+          </header>
+          <div class="work-list">
+            <a class="work-card" href="/cases/neural-logistics.html" data-reveal>
+              <div>
+                <div class="work-card__meta mono">
+                  <span>01 · LOGISTICS</span>
+                  <span>FORTUNE-50</span>
+                </div>
+                <h3>Neural logistics OS</h3>
+                <p>
+                  Multimodal demand graph across 14 regions and 2.1B SKU-day
+                  combinations — replacing a decade of brittle heuristics.
+                </p>
+                <span class="work-card__link">Read full case →</span>
+              </div>
+              <div class="work-card__stats">
+                <div><strong>38%</strong><span>forecast error cut</span></div>
+                <div><strong>$240M</strong><span>dead inventory / yr</span></div>
+                <div><strong>11 wks</strong><span>shadow → prod</span></div>
+              </div>
+            </a>
+
+            <a class="work-card" href="/cases/clinical-triage.html" data-reveal>
+              <div>
+                <div class="work-card__meta mono">
+                  <span>02 · HEALTHCARE</span>
+                  <span>NATIONAL NETWORK</span>
+                </div>
+                <h3>Multimodal clinical triage</h3>
+                <p>
+                  Imaging, vitals, notes, and labs in one calibrated pass —
+                  designed for FDA-path readiness from day one.
+                </p>
+                <span class="work-card__link">Read full case →</span>
+              </div>
+              <div class="work-card__stats">
+                <div><strong>12m→47s</strong><span>decision latency</span></div>
+                <div><strong>99.2%</strong><span>specialist concordance</span></div>
+                <div><strong>0</strong><span>Sev-1 in 180 days</span></div>
+              </div>
+            </a>
+
+            <a class="work-card" href="/cases/fraud-graph.html" data-reveal>
+              <div>
+                <div class="work-card__meta mono">
+                  <span>03 · PAYMENTS</span>
+                  <span>GLOBAL RAIL</span>
+                </div>
+                <h3>Real-time fraud graph</h3>
+                <p>
+                  Entity scoring across every hop in the money path — under 18ms
+                  p99 at peak holiday load.
+                </p>
+                <span class="work-card__link">Read full case →</span>
+              </div>
+              <div class="work-card__stats">
+                <div><strong>$1.1B</strong><span>blocked YoY</span></div>
+                <div><strong>0.08%</strong><span>false positives</span></div>
+                <div><strong>18ms</strong><span>p99 score</span></div>
+              </div>
+            </a>
+
+            <a class="work-card" href="/cases/foundation-stack.html" data-reveal>
+              <div>
+                <div class="work-card__meta mono">
+                  <span>04 · SOVEREIGN AI</span>
+                  <span>NATIONAL LAB</span>
+                </div>
+                <h3>Foundation fine-tune stack</h3>
+                <p>
+                  Post-training platform with preference flywheels, eval CI, and
+                  cost-aware inference routing.
+                </p>
+                <span class="work-card__link">Read full case →</span>
+              </div>
+              <div class="work-card__stats">
+                <div><strong>43%</strong><span>domain eval lift</span></div>
+                <div><strong>6×</strong><span>cheaper inference</span></div>
+                <div><strong>9 mo</strong><span>lab → fleet</span></div>
+              </div>
+            </a>
+
+            <a class="work-card" href="/cases/code-migration.html" data-reveal>
+              <div>
+                <div class="work-card__meta mono">
+                  <span>05 · LEGACY</span>
+                  <span>ENTERPRISE ESTATE</span>
+                </div>
+                <h3>Autonomous code migration</h3>
+                <p>
+                  Agent swarm across 4.2M lines of COBOL → cloud with differential
+                  testing that treated drift as Sev-0.
+                </p>
+                <span class="work-card__link">Read full case →</span>
+              </div>
+              <div class="work-card__stats">
+                <div><strong>4.2M</strong><span>LOC migrated</span></div>
+                <div><strong>11 wks</strong><span>calendar time</span></div>
+                <div><strong>0</strong><span>Sev-1 / 90 days</span></div>
+              </div>
+            </a>
+
+            <a class="work-card" href="/cases/edge-perception.html" data-reveal>
+              <div>
+                <div class="work-card__meta mono">
+                  <span>06 · INDUSTRIAL</span>
+                  <span>AUTONOMY OEM</span>
+                </div>
+                <h3>Edge perception mesh</h3>
+                <p>
+                  On-robot multimodal perception for hazardous environments —
+                  fully offline when the uplink dies mid-mission.
+                </p>
+                <span class="work-card__link">Read full case →</span>
+              </div>
+              <div class="work-card__stats">
+                <div><strong>62%</strong><span>mission time ↓</span></div>
+                <div><strong>100%</strong><span>offline operable</span></div>
+                <div><strong>3 yrs</strong><span>no field recall</span></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="zone" id="platform">
+        <div class="wrap">
+          <header class="zone-head">
+            <p class="eyebrow">Platform spine</p>
+            <h2>Under the hood — the actual layers we ship.</h2>
+            <p class="zone-sub">
+              Every engagement maps to this spine. No mystery meat architecture.
+            </p>
+          </header>
+          <div class="spine">
+            <div class="spine__node" data-reveal>
+              <span class="mono">L0</span>
+              <div>
+                <h3>Signal intake</h3>
+                <p>Event buses, feature streams, docs, sensors, ad/CRM telemetry.</p>
+              </div>
+            </div>
+            <div class="spine__node" data-reveal>
+              <span class="mono">L1</span>
+              <div>
+                <h3>Representation</h3>
+                <p>Embeddings, graphs, caches — memory that stays hot under load.</p>
+              </div>
+            </div>
+            <div class="spine__node" data-reveal>
+              <span class="mono">L2</span>
+              <div>
+                <h3>Reasoning core</h3>
+                <p>Models, planners, verifiers, and marketing decision policies.</p>
+              </div>
+            </div>
+            <div class="spine__node" data-reveal>
+              <span class="mono">L3</span>
+              <div>
+                <h3>Action plane</h3>
+                <p>APIs, agents, robots, consoles, and channel execution.</p>
+              </div>
+            </div>
+            <div class="spine__node" data-reveal>
+              <span class="mono">L4</span>
+              <div>
+                <h3>Proof layer</h3>
+                <p>Eval gates, audits, kill switches, revenue &amp; safety telemetry.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="zone" id="voices">
+        <div class="wrap">
+          <header class="zone-head">
+            <p class="eyebrow">What leaders say</p>
+            <h2>Readable proof from people who own the outcome.</h2>
+          </header>
+          <div class="quotes">
+            <blockquote class="quote" data-reveal>
+              <p>
+                “Signal Forge didn’t sell us a model. They rebuilt how demand
+                decisions get made — and finance could finally reconcile the
+                forecast to the warehouse.”
+              </p>
+              <footer>
+                <strong>VP Supply Chain</strong> · Fortune-50 logistics
+              </footer>
+            </blockquote>
+            <blockquote class="quote" data-reveal>
+              <p>
+                “The marketing OS paid for itself in a quarter. Same brand voice,
+                twelve markets, and attribution that our CFO stopped arguing with.”
+              </p>
+              <footer><strong>CMO</strong> · B2B platform company</footer>
+            </blockquote>
+            <blockquote class="quote" data-reveal>
+              <p>
+                “We had research-grade models and production-grade outages. They
+                connected the two with eval gates our security team actually signed.”
+              </p>
+              <footer><strong>Head of AI</strong> · Sovereign lab</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="zone" id="filter">
+        <div class="wrap">
+          <header class="zone-head">
+            <p class="eyebrow">Engagement filter</p>
+            <h2>Who we take — and who we walk from.</h2>
+            <p class="zone-sub">
+              Desire is higher when the door is narrow. We refuse most briefs.
+            </p>
+          </header>
+          <div class="filter-grid">
+            <div class="filter-col filter-col--yes" data-reveal>
+              <h3 class="mono">We engage when</h3>
+              <ul>
+                <li>The problem has no off-the-shelf answer that survives production.</li>
+                <li>Leadership funds outcomes — including marketing pipeline, not just demos.</li>
+                <li>Data exists, or you will let us build the pipes to create it.</li>
+                <li>Failure modes can be discussed in daylight with legal and security.</li>
+              </ul>
+            </div>
+            <div class="filter-col filter-col--no" data-reveal>
+              <h3 class="mono">We walk when</h3>
+              <ul>
+                <li>“Just wrap GPT” or “just add AI content” is the entire strategy.</li>
+                <li>Compliance is treated as a surprise at the end.</li>
+                <li>Nobody owns the P&amp;L impact of the system.</li>
+                <li>You need a vendor to agree with you, not to be right.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="filter-note mono" data-reveal>
+            Acceptance rate last 24 mo — <strong>7%</strong> of inbound
+          </p>
+        </div>
+      </section>
+
+      <section class="zone" id="dock">
+        <div class="wrap">
+          <header class="zone-head">
+            <p class="eyebrow">Dock</p>
+            <h2>Arm a mission.</h2>
+            <p class="zone-sub">
+              Not a contact form. A launch sequence. Tell us what shouldn’t be
+              possible yet — in engineering or in market.
+            </p>
+          </header>
+          <form class="launch" id="launch-form" novalidate>
+            <div class="launch__row">
+              <label>
+                <span class="mono">Callsign</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                <span class="mono">Channel</span>
+                <input type="email" name="email" placeholder="you@org.com" required />
+              </label>
+            </div>
+            <label>
+              <span class="mono">Org</span>
+              <input type="text" name="org" placeholder="Company or lab" />
+            </label>
+            <label>
+              <span class="mono">Focus</span>
+              <select name="focus">
+                <option value="ai">AI / ML systems</option>
+                <option value="marketing">Marketing OS / growth</option>
+                <option value="both">Both — product + go-to-market</option>
+                <option value="migration">Migration / platform</option>
+                <option value="other">Something else impossible</option>
+              </select>
+            </label>
+            <label>
+              <span class="mono">Brief</span>
+              <textarea
+                name="brief"
+                rows="5"
+                placeholder="What must exist that does not exist today — and what does winning look like in numbers?"
+                required
+              ></textarea>
+            </label>
+            <div class="launch__row">
+              <label>
+                <span class="mono">Timeline</span>
+                <select name="timeline">
+                  <option value="now">Already late</option>
+                  <option value="q">This quarter</option>
+                  <option value="h">This half</option>
+                  <option value="y">This year</option>
+                </select>
+              </label>
+              <button type="submit" class="btn btn--primary">Initiate sequence</button>
+            </div>
+            <p class="launch__status mono" id="launch-status" role="status" hidden>
+              Sequence armed — we’ll signal back within 48h
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot wrap">
+      <div>
+        <div class="foot__brand">SIGNAL<span>FORGE</span></div>
+        <p>
+          Enterprise AI, ML, systems, and marketing engines. Impossible software,
+          shipped.
+        </p>
+      </div>
+      <div>
+        <h4>Work</h4>
+        <a href="/cases/neural-logistics.html">Neural logistics</a>
+        <a href="/cases/clinical-triage.html">Clinical triage</a>
+        <a href="/cases/fraud-graph.html">Fraud graph</a>
+        <a href="/cases/foundation-stack.html">Foundation stack</a>
+        <a href="/cases/code-migration.html">Code migration</a>
+        <a href="/cases/edge-perception.html">Edge perception</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#marketing">Marketing</a>
+        <a href="#platform">Platform</a>
+        <a href="#dock">Talk to us</a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
