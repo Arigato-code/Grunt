@@ -1,4 +1,3 @@
-import "./style.css";
 import { mountNav } from "./nav.js";
 import { initMotion } from "./motion.js";
 

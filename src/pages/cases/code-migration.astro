@@ -1,20 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autonomous Code Migration — Signal Forge Case Study</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="site-nav"></div>
-    <main class="wrap">
+---
+import CaseLayout from "../../layouts/CaseLayout.astro";
+---
+
+<CaseLayout
+  title="Autonomous Code Migration — Signal Forge Case Study"
+  description="An agent swarm that planned, rewrote, and verified a COBOL → cloud migration across 4.2M lines — zero Sev-1 regressions in the first ninety days live."
+>
+  <main class="wrap">
       <header class="case-hero">
         <p class="eyebrow">Case 05 · Legacy enterprise estate</p>
         <h1>Autonomous code migration</h1>
@@ -111,10 +103,8 @@
         </aside>
       </div>
       <nav class="case-nav">
-        <a href="/cases/foundation-stack.html">← Foundation stack</a>
-        <a href="/cases/edge-perception.html">Next: Edge perception →</a>
+        <a href="/cases/foundation-stack">← Foundation stack</a>
+        <a href="/cases/edge-perception">Next: Edge perception →</a>
       </nav>
     </main>
-    <script type="module" src="/src/case.js"></script>
-  </body>
-</html>
+</CaseLayout>

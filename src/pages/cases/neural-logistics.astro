@@ -1,20 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neural Logistics OS — Signal Forge Case Study</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="site-nav"></div>
-    <main class="wrap">
+---
+import CaseLayout from "../../layouts/CaseLayout.astro";
+---
+
+<CaseLayout
+  title="Neural Logistics OS — Signal Forge Case Study"
+  description="A multimodal demand graph that replaced a decade of brittle forecast heuristics across 14 regions — cutting forecast error 38% and freeing an estimated $240M in"
+>
+  <main class="wrap">
       <header class="case-hero">
         <p class="eyebrow">Case 01 · Fortune-50 logistics</p>
         <h1>Neural logistics OS</h1>
@@ -139,9 +131,7 @@
 
       <nav class="case-nav">
         <a href="/#work">← All work</a>
-        <a href="/cases/clinical-triage.html">Next: Clinical triage →</a>
+        <a href="/cases/clinical-triage">Next: Clinical triage →</a>
       </nav>
     </main>
-    <script type="module" src="/src/case.js"></script>
-  </body>
-</html>
+</CaseLayout>

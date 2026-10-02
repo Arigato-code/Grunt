@@ -1,14 +1,12 @@
-import "./style.css";
 import { mountNav } from "./nav.js";
 import { initMotion } from "./motion.js";
 
 const isHome = Boolean(document.getElementById("webgl"));
-const base = isHome ? "/" : "/";
 
 mountNav({
   home: "/",
-  cases: isHome ? "/#work" : "/#work",
-  dock: isHome ? "/#dock" : "/#dock",
+  cases: "/#work",
+  dock: "/#dock",
 });
 
 let sceneApi = null;

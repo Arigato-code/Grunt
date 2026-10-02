@@ -1,20 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation Fine-tune Stack — Signal Forge Case Study</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="site-nav"></div>
-    <main class="wrap">
+---
+import CaseLayout from "../../layouts/CaseLayout.astro";
+---
+
+<CaseLayout
+  title="Foundation Fine-tune Stack — Signal Forge Case Study"
+  description="An end-to-end post-training platform for a national-scale model — preference flywheels, eval CI, and cost-aware routing that delivered 43% domain lift and 6× ch"
+>
+  <main class="wrap">
       <header class="case-hero">
         <p class="eyebrow">Case 04 · Sovereign AI lab</p>
         <h1>Foundation fine-tune stack</h1>
@@ -114,10 +106,8 @@
         </aside>
       </div>
       <nav class="case-nav">
-        <a href="/cases/fraud-graph.html">← Fraud graph</a>
-        <a href="/cases/code-migration.html">Next: Code migration →</a>
+        <a href="/cases/fraud-graph">← Fraud graph</a>
+        <a href="/cases/code-migration">Next: Code migration →</a>
       </nav>
     </main>
-    <script type="module" src="/src/case.js"></script>
-  </body>
-</html>
+</CaseLayout>

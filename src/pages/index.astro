@@ -1,23 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Signal Forge — enterprise AI, ML, systems, and marketing engines that ship outcomes, not slideware."
-    />
-    <title>Signal Forge — Enterprise AI, Systems &amp; Marketing</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="noise" aria-hidden="true"></div>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Signal Forge — Enterprise AI, Systems & Marketing"
+  description="Signal Forge — enterprise AI, ML, systems, and marketing engines that ship outcomes, not slideware."
+>
+<div class="noise" aria-hidden="true"></div>
     <canvas id="webgl" aria-hidden="true"></canvas>
     <div id="site-nav"></div>
 
@@ -268,7 +257,7 @@
             </p>
           </header>
           <div class="work-list">
-            <a class="work-card" href="/cases/neural-logistics.html" data-reveal>
+            <a class="work-card" href="/cases/neural-logistics" data-reveal>
               <div>
                 <div class="work-card__meta mono">
                   <span>01 · LOGISTICS</span>
@@ -288,7 +277,7 @@
               </div>
             </a>
 
-            <a class="work-card" href="/cases/clinical-triage.html" data-reveal>
+            <a class="work-card" href="/cases/clinical-triage" data-reveal>
               <div>
                 <div class="work-card__meta mono">
                   <span>02 · HEALTHCARE</span>
@@ -308,7 +297,7 @@
               </div>
             </a>
 
-            <a class="work-card" href="/cases/fraud-graph.html" data-reveal>
+            <a class="work-card" href="/cases/fraud-graph" data-reveal>
               <div>
                 <div class="work-card__meta mono">
                   <span>03 · PAYMENTS</span>
@@ -328,7 +317,7 @@
               </div>
             </a>
 
-            <a class="work-card" href="/cases/foundation-stack.html" data-reveal>
+            <a class="work-card" href="/cases/foundation-stack" data-reveal>
               <div>
                 <div class="work-card__meta mono">
                   <span>04 · SOVEREIGN AI</span>
@@ -348,7 +337,7 @@
               </div>
             </a>
 
-            <a class="work-card" href="/cases/code-migration.html" data-reveal>
+            <a class="work-card" href="/cases/code-migration" data-reveal>
               <div>
                 <div class="work-card__meta mono">
                   <span>05 · LEGACY</span>
@@ -368,7 +357,7 @@
               </div>
             </a>
 
-            <a class="work-card" href="/cases/edge-perception.html" data-reveal>
+            <a class="work-card" href="/cases/edge-perception" data-reveal>
               <div>
                 <div class="work-card__meta mono">
                   <span>06 · INDUSTRIAL</span>
@@ -584,12 +573,12 @@
       </div>
       <div>
         <h4>Work</h4>
-        <a href="/cases/neural-logistics.html">Neural logistics</a>
-        <a href="/cases/clinical-triage.html">Clinical triage</a>
-        <a href="/cases/fraud-graph.html">Fraud graph</a>
-        <a href="/cases/foundation-stack.html">Foundation stack</a>
-        <a href="/cases/code-migration.html">Code migration</a>
-        <a href="/cases/edge-perception.html">Edge perception</a>
+        <a href="/cases/neural-logistics">Neural logistics</a>
+        <a href="/cases/clinical-triage">Clinical triage</a>
+        <a href="/cases/fraud-graph">Fraud graph</a>
+        <a href="/cases/foundation-stack">Foundation stack</a>
+        <a href="/cases/code-migration">Code migration</a>
+        <a href="/cases/edge-perception">Edge perception</a>
       </div>
       <div>
         <h4>Company</h4>
@@ -599,7 +588,7 @@
         <a href="#dock">Talk to us</a>
       </div>
     </footer>
-
-    <script type="module" src="/src/main.js"></script>
-  </body>
-</html>
+  <script>
+    import "../scripts/main.js";
+  </script>
+</BaseLayout>

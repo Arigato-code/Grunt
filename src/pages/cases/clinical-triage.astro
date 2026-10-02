@@ -1,20 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multimodal Clinical Triage — Signal Forge Case Study</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="site-nav"></div>
-    <main class="wrap">
+---
+import CaseLayout from "../../layouts/CaseLayout.astro";
+---
+
+<CaseLayout
+  title="Multimodal Clinical Triage — Signal Forge Case Study"
+  description="A specialist-grade triage stack that reads imaging, vitals, notes, and labs in one pass — cutting decision latency from twelve minutes to forty-seven seconds wi"
+>
+  <main class="wrap">
       <header class="case-hero">
         <p class="eyebrow">Case 02 · National health network</p>
         <h1>Multimodal clinical triage</h1>
@@ -127,10 +119,8 @@
         </aside>
       </div>
       <nav class="case-nav">
-        <a href="/cases/neural-logistics.html">← Neural logistics</a>
-        <a href="/cases/fraud-graph.html">Next: Fraud graph →</a>
+        <a href="/cases/neural-logistics">← Neural logistics</a>
+        <a href="/cases/fraud-graph">Next: Fraud graph →</a>
       </nav>
     </main>
-    <script type="module" src="/src/case.js"></script>
-  </body>
-</html>
+</CaseLayout>

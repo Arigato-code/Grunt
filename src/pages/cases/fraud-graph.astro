@@ -1,20 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Real-time Fraud Graph — Signal Forge Case Study</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="site-nav"></div>
-    <main class="wrap">
+---
+import CaseLayout from "../../layouts/CaseLayout.astro";
+---
+
+<CaseLayout
+  title="Real-time Fraud Graph — Signal Forge Case Study"
+  description="A continuously learning entity graph that scores every hop in the money path — blocking an estimated $1.1B in attack surface year-over-year while holding false "
+>
+  <main class="wrap">
       <header class="case-hero">
         <p class="eyebrow">Case 03 · Global payments rail</p>
         <h1>Real-time fraud graph</h1>
@@ -112,10 +104,8 @@
         </aside>
       </div>
       <nav class="case-nav">
-        <a href="/cases/clinical-triage.html">← Clinical triage</a>
-        <a href="/cases/foundation-stack.html">Next: Foundation stack →</a>
+        <a href="/cases/clinical-triage">← Clinical triage</a>
+        <a href="/cases/foundation-stack">Next: Foundation stack →</a>
       </nav>
     </main>
-    <script type="module" src="/src/case.js"></script>
-  </body>
-</html>
+</CaseLayout>
