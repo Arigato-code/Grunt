@@ -1,0 +1,90 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        type: choice
+        options:
+          - alpha
+          - prod
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  resolve-env:
+    name: Resolve environment
+    runs-on: ubuntu-latest
+    outputs:
+      ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}
+
+    steps:
+      - id: vars
+        name: Resolve target environment
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            ENVIRONMENT="${{ inputs.environment }}"
+          elif [ "${{ github.event_name }}" = "release" ]; then
+            ENVIRONMENT="prod"
+          else
+            ENVIRONMENT="alpha"
+          fi
+
+          echo "ENVIRONMENT=$ENVIRONMENT" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    name: Deploy to Vercel
+    needs: [resolve-env]
+    runs-on: ubuntu-latest
+    environment: ${{ needs.resolve-env.outputs.ENVIRONMENT }}
+    concurrency:
+      group: grunt-deploy-${{ needs.resolve-env.outputs.ENVIRONMENT }}
+      cancel-in-progress: false
+
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      # Reference the secret directly: GitHub redacts secret values from job outputs,
+      # so passing it via needs.*.outputs.* would arrive empty and break `vercel pull`.
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Override commit author for Vercel
+        run: |
+          git config user.email "manumanoj709@gmail.com"
+          git config user.name "manojdm"
+          git commit --amend --author="manojdm <manumanoj709@gmail.com>" --no-edit
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Ensure Vercel project id
+        run: |
+          if [ -z "$VERCEL_PROJECT_ID" ]; then
+            echo "VERCEL_PROJECT_ID=prj_9pMER2uOtH1TxAyUkCmzTUhI6vSh" >> "$GITHUB_ENV"
+          fi
+
+      - name: Pull Vercel environment
+        run: npx vercel@52.0.0 pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      # installCommand from vercel.json runs inside vercel build (no separate npm ci)
+      - name: Build for Vercel
+        run: npx vercel@52.0.0 build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy prebuilt output
+        run: npx vercel@52.0.0 deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
